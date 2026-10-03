@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI BlogNest</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+    <div class="brand">AI BlogNest</div>
+    <div class="tagline">AI-Augmented Backend Development</div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <h1>Create. Organize. Share.</h1>
+        <p>A simple blog management application powered by a Flask REST API and SQLite.</p>
+        <div class="status" id="status">Checking API...</div>
+    </section>
+
+    <section class="grid">
+        <div class="card editor">
+            <h2 id="formTitle">Create a Blog</h2>
+            <input id="title" type="text" placeholder="Blog title (optional)">
+            <select id="category">
+                <option value="">Choose category (AI can suggest)</option>
+                <option>Technology</option>
+                <option>Education</option>
+                <option>Environment</option>
+                <option>Health</option>
+                <option>Travel</option>
+                <option>Entertainment</option>
+                <option>General</option>
+            </select>
+            <textarea id="content" rows="9" placeholder="Write your blog content..."></textarea>
+            <div class="buttons">
+                <button class="primary" onclick="saveBlog()">Save Blog</button>
+                <button class="ai" onclick="getAISuggestion()">AI Suggest</button>
+                <button class="secondary" onclick="resetForm()">Clear</button>
+            </div>
+            <p id="message" class="message"></p>
+        </div>
+
+        <div class="card">
+            <div class="list-header">
+                <h2>Published Blogs</h2>
+                <input id="search" oninput="loadBlogs()" placeholder="Search...">
+            </div>
+            <div id="blogList"></div>
+        </div>
+    </section>
+</main>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
